@@ -4,10 +4,6 @@ from random import choice
 from customers import get_customers_from_file
 
 
-# Add code starting here
-
-# Hint: remember to import any functions you need from
-# other files or libraries
 def pick_winner():
     """Choose a random winner from list of customers."""
 
