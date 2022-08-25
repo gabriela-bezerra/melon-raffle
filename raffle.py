@@ -57,4 +57,5 @@ def run_raffle():
     pick_winner(customers)
 
 
-run_raffle()
+if __name__ == "__main__":
+    run_raffle()
