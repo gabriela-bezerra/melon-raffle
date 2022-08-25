@@ -30,7 +30,7 @@ def get_customers_from_file(customer_file_path):
     #   customer-name | email | street | city | zipcode
 
     for line in customer_file:
-        customer_data = line.strip().split("|")
+        customer_data = line.rstrip().split("|")
         name, email, street, city, zipcode = customer_data
 
         new_customer = Customer(name, email, street, city, zipcode)
@@ -42,7 +42,7 @@ def get_customers_from_file(customer_file_path):
 def pick_winner(customers):
     """Choose a random winner from list of customers."""
 
-    chosen_customer = random.choice(customers)
+    chosen_customer = choice(customers)
 
     name = chosen_customer.name
     email = chosen_customer.email
@@ -55,3 +55,6 @@ def run_raffle():
 
     customers = get_customers_from_file("customers.txt")
     pick_winner(customers)
+
+
+run_raffle()

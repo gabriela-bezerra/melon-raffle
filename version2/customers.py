@@ -1,5 +1,7 @@
 """Customer class definition"""
 
+import sys
+
 
 class Customer:
     """A customer at Ubermelon."""
@@ -12,11 +14,11 @@ class Customer:
         self.zipcode = zipcode
 
 
-def get_customers_from_file(customer_file_path):
+def get_customers_from_file(customer_file_path=sys.argv[1]):
     """Read customer file and return list of customer objects.
 
     Read file at customer_file_path and create a customer
-    object containing customer information.
+    object containing customer information. 
     """
 
     customers = []
@@ -28,7 +30,7 @@ def get_customers_from_file(customer_file_path):
     #   customer-name | email | street | city | zipcode
 
     for line in customer_file:
-        customer_data = line.strip().split("|")
+        customer_data = line.rstrip().split("|")
         name, email, street, city, zipcode = customer_data
 
         new_customer = Customer(name, email, street, city, zipcode)
